@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,3 +19,6 @@ Route::get('/', function () {
 
 // PETS
 Route::get('/pets', 'PetController@index');
+
+// CLIENTS
+Route::get('/clients', 'ClientController@index');

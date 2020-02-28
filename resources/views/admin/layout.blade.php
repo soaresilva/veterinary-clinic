@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{$title}} | Jukebox Admin</title>
+  <title>{{$title}} | Vet Clinic </title>
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
   
   {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -18,6 +18,7 @@
 
 <nav>
   <a href="{{ action('PetController@index') }}">List of pets</a>
+  <input type="text" placeholder="Search">
   {{-- <a href="{{ action('AuthorController@create') }}">New artist</a>
   <a href="{{ action('VideoController@index') }}">List of videos</a>
   <a href="{{ action('VideoController@create') }}">New video</a> --}}

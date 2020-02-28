@@ -25,16 +25,6 @@
         <td>{{$pet->breed}}</td>
         <td>{{$pet->client->first_name}} {{$pet->client->surname}}</td>
       </tr>
-
-        {{-- <td>
-          <a href="{{ action('AuthorController@edit', ['id' => $author->id]) }}">Edit</a>
-        </td>
-        <td>
-          <form action="{{ action('AuthorController@delete', ['id' => $author->id])}}" method="post">
-          @method('delete')
-          @csrf
-          <input type="submit" value="Delete"></form>
-        </td> --}}
     @endforeach
   </table>
 

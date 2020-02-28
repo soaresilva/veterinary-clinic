@@ -14,4 +14,6 @@ class PetController extends Controller
         $clients = Client::all();
         return view('admin.pets.index', compact('pets', 'clients'));
     }
+    
+    
 }
