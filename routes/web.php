@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// PETS
+Route::get('/pets', 'PetController@index');
