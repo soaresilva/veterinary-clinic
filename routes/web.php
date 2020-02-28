@@ -19,6 +19,10 @@ Route::get('/', function () {
 
 // PETS
 Route::get('/pets', 'PetController@index');
+Route::get('/pet/{id}', 'PetController@show');
+
 
 // CLIENTS
 Route::get('/clients', 'ClientController@index');
+Route::get('/client/{id}', 'ClientController@show');
+

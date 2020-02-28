@@ -21,9 +21,11 @@
     @foreach ($pets as $pet)
     
       <tr>
-        <td>{{$pet->name}}</td>
+        <td><a href="/pet/{{$pet->id}}"> {{$pet->name}} </a></td>
         <td>{{$pet->breed}}</td>
-        <td>{{$pet->client->first_name}} {{$pet->client->surname}}</td>
+        <td><a href="/client/{{$pet->client->id}}">{{$pet->client->first_name}} {{$pet->client->surname}}</a></td>
+
+
       </tr>
     @endforeach
   </table>

@@ -1,1 +1,28 @@
 //
+
+body {
+  background-color: antiquewhite;
+  font-family: Nunito;
+  padding: 1.5rem;
+}
+
+nav {
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:visited {
+      color: blue;
+    }
+  }
+
+}
+
+thead {
+  font-weight: bold;
+}
+
+img {
+  width: 300px;
+}

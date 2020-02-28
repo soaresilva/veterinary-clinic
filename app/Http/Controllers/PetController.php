@@ -15,5 +15,9 @@ class PetController extends Controller
         return view('admin.pets.index', compact('pets', 'clients'));
     }
     
-    
+    public function show($id)
+    {
+        $pet = Pet::findOrFail($id);
+        return view('admin.pets.show', compact('pet'));
+    }
 }

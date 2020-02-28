@@ -13,6 +13,13 @@ class ClientController extends Controller
         $clients = Client::orderBy('surname', 'asc')->limit(20)->get();
         return view('admin.clients.index', compact('clients'));
     }
+    
+    public function show($id)
+    {
+        $client = Client::findOrFail($id);
+        return view('admin.clients.show', compact('client'));
+    }
+    
     public function search()
     {
         $clients = Client::whereLike('surname', '%%')->get();
