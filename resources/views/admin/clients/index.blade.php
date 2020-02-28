@@ -24,7 +24,7 @@
     <td><a href="/client/{{$client->id}}"> {{$client->first_name}} {{$client->surname}} </a>
     </td>
     @foreach ($client->pets as $pet)
-      <td><a href="/pet/{{$pet->id}}"> {{$pet->name}} </a></td>
+      <td><a href="/pet/{{$pet->id}}"> {{$pet->name}}</a></td>
       @endforeach
   </tr>
     @endforeach

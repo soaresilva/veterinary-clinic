@@ -20,9 +20,13 @@ class ClientController extends Controller
         return view('admin.clients.show', compact('client'));
     }
     
-    public function search()
+    public function search(Request $request)
     {
-        $clients = Client::whereLike('surname', '%%')->get();
+        $search = $request->input('name');
+        // $clients = Client::all();
+        $clients = Client::query()
+                    ->where('surname', 'LIKE', "%{$search}%")
+                    ->where('first_name', 'LIKE', "%{$search}%")->get();
         return view('admin.clients.search', compact('clients'));
     }
 }

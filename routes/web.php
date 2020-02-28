@@ -25,4 +25,5 @@ Route::get('/pet/{id}', 'PetController@show');
 // CLIENTS
 Route::get('/clients', 'ClientController@index');
 Route::get('/client/{id}', 'ClientController@show');
+Route::get('/clients', 'ClientController@search');
 

@@ -23,7 +23,7 @@
       <tr>
         <td><a href="/pet/{{$pet->id}}"> {{$pet->name}} </a></td>
         <td>{{$pet->breed}}</td>
-        <td><a href="/client/{{$pet->client->id}}">{{$pet->client->first_name}} {{$pet->client->surname}}</a></td>
+        <td><a href="/client/{{$pet->client->id}}">{{$pet->client->first_name}} {{$pet->client->surname}} </a></td>
 
 
       </tr>

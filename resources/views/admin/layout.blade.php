@@ -20,10 +20,12 @@
   <a href="{{ action('PetController@index') }}">List of pets</a>
   <a href="{{ action('ClientController@index') }}">List of clients</a>
 
-  <input type="text" placeholder="Search">
-  {{-- <a href="{{ action('AuthorController@create') }}">New artist</a>
-  <a href="{{ action('VideoController@index') }}">List of videos</a>
-  <a href="{{ action('VideoController@create') }}">New video</a> --}}
+  <form action="/clients" method="get">
+    @csrf
+      <input type="text" name="name" placeholder="Search">
+      <input type="submit">
+  </form>
+
 </nav>
 
   <h1>@yield('headline')</h1>

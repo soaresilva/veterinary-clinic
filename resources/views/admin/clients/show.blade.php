@@ -12,7 +12,7 @@
   
   <p><b>Pets:</b><p>
     @foreach ($client->pets as $pet)
-      <a href="/pet/{{$pet->id}}"> {{$pet->name}}</a> ({{$pet->breed}})<br>
+      <a href="/pet/{{$pet->id}}"> {{$pet->name}}</a> ({{$pet->breed}}, {{$pet->age}} years old)<br>
       @endforeach
 </div>
 
