@@ -19,6 +19,8 @@
 <nav>
   <a href="{{ action('PetController@index') }}">List of pets</a>
   <a href="{{ action('ClientController@index') }}">List of clients</a>
+  <a href="{{ action('PetController@create') }}">Create new pet</a>
+  <a href="{{ action('ClientController@create') }}">Create new client</a>
 </nav>
 
   <h1>@yield('headline')</h1>

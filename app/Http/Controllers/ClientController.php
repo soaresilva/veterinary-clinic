@@ -44,6 +44,6 @@ class ClientController extends Controller
         $client->first_name = $request->input('first_name');
         $client->surname = $request->input('surname');
         $client->save();
-        return redirect('/pets/create/' . $client->surname);
+        return redirect('/pets/create/');
     }
 }

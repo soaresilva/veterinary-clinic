@@ -51,6 +51,15 @@ class PetController extends Controller
         $pet->photo = $request->input('photo');
         $pet->client_id = $request->input('owner_id');
         $pet->save();
+        // return redirect('/clients', compact('clients', 'pet'));
+        return redirect('/clients');
+
+    }
+    
+    public function delete($id)
+    {
+        $pet = Pet::findOrFail($id);
+        $pet->delete();
         return redirect('/clients');
     }
 }
