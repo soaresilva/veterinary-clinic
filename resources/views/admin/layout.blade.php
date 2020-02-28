@@ -20,8 +20,7 @@
   <a href="{{ action('PetController@index') }}">List of pets</a>
   <a href="{{ action('ClientController@index') }}">List of clients</a>
 
-  <form action="/clients" method="get">
-    @csrf
+  <form action="{{ action('ClientController@index') }}" method="get">
       <input type="text" name="name" placeholder="Search">
       <input type="submit">
   </form>
