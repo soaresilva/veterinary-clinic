@@ -17,8 +17,9 @@
   <p><b>Breed:</b> {{$pet->breed}}</p>
   <p><b>Age:</b> {{$pet->age}}</p>
   <p><b>Weight:</b> {{$pet->weight}}</p>
-
-  
 </div>
+
+<a href="{{ url()->previous() }}">Back to previous page</a>
+
 
 @endsection

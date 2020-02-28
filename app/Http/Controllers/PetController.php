@@ -8,9 +8,17 @@ use Illuminate\Http\Request;
 
 class PetController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $pets = Pet::orderBy('name', 'asc')->limit(20)->get();
+        $query = Pet::orderBy('name', 'asc')->limit(20);
+
+        if ($request->has('name')) {
+            $search = $request->input('name');
+            $query
+            ->where('name', 'LIKE', "%{$search}%");
+        }
+        
+        $pets = $query->get();
         $clients = Client::all();
         return view('admin.pets.index', compact('pets', 'clients'));
     }

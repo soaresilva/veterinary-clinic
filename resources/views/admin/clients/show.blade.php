@@ -16,4 +16,5 @@
       @endforeach
 </div>
 
+<a href="{{ url()->previous() }}">Back to previous page</a>
 @endsection

@@ -2,11 +2,22 @@
   'title' => 'Pet list'
 ])
 
-@if(Session::has('success_message'))
+{{-- @if(Session::has('success_message'))
 <div class="alert alert-success">
     {{ Session::get('success_message') }}
 </div>
-@endif
+@endif --}}
+
+@section('headline')
+<h1>List of Pets</h1>
+@endsection
+
+@section('searchbar')
+  <form action="{{ action('PetController@index') }}" method="get">
+    <input type="text" name="name" placeholder="Search">
+    <input type="submit">
+  </form>
+@endsection
 
 @section('content')
 

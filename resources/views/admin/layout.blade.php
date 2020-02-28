@@ -19,16 +19,11 @@
 <nav>
   <a href="{{ action('PetController@index') }}">List of pets</a>
   <a href="{{ action('ClientController@index') }}">List of clients</a>
-
-  <form action="{{ action('ClientController@index') }}" method="get">
-      <input type="text" name="name" placeholder="Search">
-      <input type="submit">
-  </form>
-
 </nav>
 
   <h1>@yield('headline')</h1>
 
+  @yield('searchbar')
   @yield('content')
 
   
