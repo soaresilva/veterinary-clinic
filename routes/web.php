@@ -20,8 +20,11 @@ Route::get('/', function () {
 // PETS
 Route::get('/pets', 'PetController@index');
 Route::get('/pet/{id}', 'PetController@show');
-
+Route::get('/pets/create/{name}', 'PetController@create');
+Route::post('/pets/create', 'PetController@store');
 
 // CLIENTS
 Route::get('/clients', 'ClientController@index');
 Route::get('/client/{id}', 'ClientController@show');
+Route::get('/clients/create', 'ClientController@create');
+Route::post('/clients/create', 'ClientController@store');

@@ -28,4 +28,22 @@ class ClientController extends Controller
         $client = Client::findOrFail($id);
         return view('admin.clients.show', compact('client'));
     }
+
+    public function create()
+    {
+        return view('admin.clients.create');
+    }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'first_name' => 'required'
+        ]);
+        $client = new Client;
+
+        $client->first_name = $request->input('first_name');
+        $client->surname = $request->input('surname');
+        $client->save();
+        return redirect('/pets/create/' . $client->surname);
+    }
 }
