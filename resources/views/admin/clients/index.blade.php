@@ -14,7 +14,7 @@
   <thead>
     <tr>
       <td><b>Client</b></td>
-      <td><b>Pet</b></td>
+      <td><b>Pets</b></td>
     </tr>
   </thead>
   
@@ -22,9 +22,9 @@
     
   <tr>
     <td>{{$client->first_name}} {{$client->surname}}</td>
-    @if ($client->id === $pets->client_id)
-    <td>{{$pets->name}}</td>
-    @endif
+    @foreach ($client->pets as $pet)
+      <td>{{$pet->name}}</td>
+      @endforeach
   </tr>
     @endforeach
   </table>

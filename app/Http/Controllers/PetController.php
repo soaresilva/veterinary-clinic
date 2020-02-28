@@ -10,7 +10,7 @@ class PetController extends Controller
 {
     public function index()
     {
-        $pets = Pet::orderBy('name', 'asc')->get();
+        $pets = Pet::orderBy('name', 'asc')->limit(20)->get();
         $clients = Client::all();
         return view('admin.pets.index', compact('pets', 'clients'));
     }
