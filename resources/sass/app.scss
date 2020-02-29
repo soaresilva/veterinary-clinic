@@ -4,6 +4,12 @@ body {
   background-color: antiquewhite;
   font-family: Nunito;
   padding: 1.5rem;
+  text-align: center;
+
+}
+
+.centertext {
+  text-align: center;
 }
 
 nav {
@@ -29,4 +35,17 @@ td {
 
 img {
   width: 300px;
+}
+
+.nopic {
+  width: 150px;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+header {
+  text-align: center;
 }

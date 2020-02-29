@@ -16,7 +16,7 @@
       @endforeach
 </div>
 
-<a href="{{ action('ClientController@edit', ['id' => $client->id]) }}">Edit client info</a> | 
-
+<a href="{{ action('ClientController@delete', ['id' => $client->id]) }}">Delete client from database</a> <br> 
+<a href="{{ action('ClientController@edit', ['id' => $client->id]) }}">Edit client info</a> <br> 
 <a href="{{ url()->previous() }}">Back to previous page</a>
 @endsection

@@ -26,7 +26,9 @@ class PetController extends Controller
     public function show($id)
     {
         $pet = Pet::findOrFail($id);
-        return view('admin.pets.show', compact('pet'));
+        $clients = Client::all();
+        $kg = round(($pet->weight / 2.205), 1);
+        return view('admin.pets.show', compact('pet', 'kg', 'clients'));
     }
 
     public function create()
@@ -49,8 +51,7 @@ class PetController extends Controller
         $pet->photo = $request->input('photo');
         $pet->client_id = $request->input('owner_id');
         $pet->save();
-        return redirect('/clients');
-
+        return redirect()->action('PetController@show', ['id' => $pet->id]);
     }
     
     public function delete($id)

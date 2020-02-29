@@ -16,7 +16,7 @@
       <input type='text' placeholder='Name' name='name' style="margin-bottom: .5rem; width: 20rem;" />
       <input type='text' placeholder='Breed' name='breed' style="margin-bottom: .5rem;" />
       <input type='text' placeholder='Age' name='age' style="margin-bottom: .5rem;" />
-      <input type='text' placeholder='Weight' name='weight' style="margin-bottom: .5rem;" />
+      <input type='text' placeholder='Weight (pounds; 1 pound ≈ 0.45kg)' name='weight' style="margin-bottom: .5rem;" />
       <input type='text' placeholder='Photo' name='photo' style="margin-bottom: .5rem;" />
       
       <select name="owner_id">

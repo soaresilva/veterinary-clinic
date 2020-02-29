@@ -19,9 +19,9 @@
 </form>
 @endsection
 
-
-
 @section('content')
+
+<div class="centertext">
 
   <table>
   <thead>
@@ -43,4 +43,6 @@
     @endforeach
   </table>
 
+</div>
 @endsection
+

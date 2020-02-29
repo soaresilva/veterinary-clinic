@@ -19,7 +19,7 @@
   <input type='text' placeholder='Name' name='name' style="margin-bottom: .5rem; width: 20rem;" value="{{ old('name', $pet->name) }}"/>
   <input type='text' placeholder='Breed' name='breed' style="margin-bottom: .5rem;" value="{{ old('breed', $pet->breed) }}"/>
   <input type='text' placeholder='Age' name='age' style="margin-bottom: .5rem;" value="{{ old('age', $pet->age) }}"/>
-  <input type='text' placeholder='Weight' name='weight' style="margin-bottom: .5rem;" value="{{ old('weight', $pet->weight) }}"/>
+  <input type='text' placeholder='Weight (pounds; 1 pound ≈ 0.45kg)' name='weight' style="margin-bottom: .5rem;" value="{{ old('weight', $pet->weight) }}"/>
   <input type='text' placeholder='Photo' name='photo' style="margin-bottom: .5rem;" value="{{ old('photo', $pet->photo) }}"/>
   
   <select name="owner_id">
