@@ -1,9 +1,9 @@
 @extends('admin.layout', [
-  'title' => 'Create a Client'
+  'title' => 'Create New Client'
 ])
 
 @section('headline')
-<h1>Create New Client</h1>
+    Create New Client
 @endsection
 
 @section('content')
@@ -19,4 +19,4 @@
       <input type='Submit'style="margin-bottom: .5rem;" />
     </form>
     
-    @endsection
+@endsection

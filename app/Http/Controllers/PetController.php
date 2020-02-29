@@ -37,8 +37,6 @@ class PetController extends Controller
 
     public function store(Request $request)
     {
-        $clients = Client::all();
-
         $this->validate($request, [
             'name' => 'required'
         ]);
@@ -51,7 +49,6 @@ class PetController extends Controller
         $pet->photo = $request->input('photo');
         $pet->client_id = $request->input('owner_id');
         $pet->save();
-        // return redirect('/clients', compact('clients', 'pet'));
         return redirect('/clients');
 
     }
@@ -61,5 +58,30 @@ class PetController extends Controller
         $pet = Pet::findOrFail($id);
         $pet->delete();
         return redirect('/clients');
+    }
+    
+    public function edit($id)
+    {
+        $pet = Pet::findOrFail($id);
+        $clients = Client::all();
+        return view('admin.pets.edit', compact('pet', 'clients'));
+    }
+    
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+        
+        $pet = Pet::findOrFail($id);
+        $pet->name = $request->input('name');
+        $pet->breed = $request->input('breed');
+        $pet->age = $request->input('age');
+        $pet->weight = $request->input('weight');
+        $pet->photo = $request->input('photo');
+        $pet->client_id = $request->input('owner_id');
+        $pet->save();
+        session()->flash('success_message', 'Success!');
+        return redirect()->action('PetController@show', ['id' => $pet->id]);    
     }
 }

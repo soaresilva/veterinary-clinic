@@ -1,58 +1,37 @@
-{{-- look, some bootstrap here! --}}
-
-  @extends('admin/layout', [
-    'title' => 'Create a new author'
-  ])
-<!-- or admin.layout, do not forget -->
-
+@extends('admin.layout', [
+  'title' => 'Edit Pet Info'
+])
 
 @section('headline')
-  @if ($author->id !== null)
-    Edit author
-    @else
-    Create a new author
-  @endif
+  Edit Pet Info
 @endsection
 
 @section('content')
 
-{{-- Validation --}}
-  @if (count($errors) > 0)
-      <div class="alert alert-danger">
-          <ul>
-              @foreach ($errors->all() as $error)
-                  <li>{{ $error }}</li>
-              @endforeach
-          </ul>
-      </div>
-  @endif
-  
-{{-- Success message, which is not displaying because my target view is different --}}
-  @if(Session::has('success_message'))
-    <div class="alert alert-success">
-        {{ Session::get('success_message') }}
-    </div>
-  @endif
-  
-  @if ($author->id !== null)
-    <form action="{{ action('AuthorController@update', ['id' => $author->id]) }}" method="post" class="form-group"> 
-    {{-- (do not forget to put the parameter id in the action and the method put below) --}}
-      @method('put')
-  @else
-    <form action="{{ action('AuthorController@store') }}" method="post" class="form-group">
-  @endif
-
+<form action="{{ action('PetController@update', ['id' => $pet->id]) }}" method="post" style="display: flex; flex-direction: column; margin-top: 2rem;">
+  @method('put')
   @csrf
   
-  <div class="form-group">
+  @if($errors->has('name'))
+    THIS FIELD HAS ERRORS
+  @endif
+  
+  <input type='text' placeholder='Name' name='name' style="margin-bottom: .5rem; width: 20rem;" value="{{ old('name', $pet->name) }}"/>
+  <input type='text' placeholder='Breed' name='breed' style="margin-bottom: .5rem;" value="{{ old('breed', $pet->breed) }}"/>
+  <input type='text' placeholder='Age' name='age' style="margin-bottom: .5rem;" value="{{ old('age', $pet->age) }}"/>
+  <input type='text' placeholder='Weight' name='weight' style="margin-bottom: .5rem;" value="{{ old('weight', $pet->weight) }}"/>
+  <input type='text' placeholder='Photo' name='photo' style="margin-bottom: .5rem;" value="{{ old('photo', $pet->photo) }}"/>
+  
+  <select name="owner_id">
+    @foreach ($clients as $client)
+      <option value="{{ $client->id }}" {{ $client->id == old('owner_id', $pet->client_id) ? ' selected' : ''}}>
+          {{ $client->first_name }} {{ $client->surname }}
+      </option>
+    @endforeach
+    </select>
 
-    <label>Artist name</label>
-    <input type="text" autocomplete="off" name="name" value="{{ old('name', $author->name) }}">
-    {{-- Adding this the author name as a value here makes it easier when creating the edit method. --}}
-    <label>Country</label>
-    <input type="text" autocomplete="off" name="country" value="{{ $author->country }}">
-    {{-- <label>Genre</label>
-    <input type="text" name="genre_id" placeholder="Genre"><br> --}}
-    <input type="submit">
-  </form>
+  
+  <input type='Submit'style="margin-bottom: .5rem;" />
+</form>
+    
 @endsection

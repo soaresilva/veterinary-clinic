@@ -3,7 +3,7 @@
 ])
 
 @section('headline')
-<h1>Add Pet to Database</h1>
+  Add Pet to Database
 @endsection
 
 @section('content')
@@ -20,11 +20,10 @@
       <input type='text' placeholder='Photo' name='photo' style="margin-bottom: .5rem;" />
       
       <select name="owner_id">
-
       @foreach ($clients as $client)
-      <option value="{{ $client->id }}">
-          {{ $client->first_name }} {{ $client->surname }}
-      </option>
+        <option value="{{ $client->id }}">
+            {{ $client->first_name }} {{ $client->surname }}
+        </option>
       @endforeach
       </select>
       

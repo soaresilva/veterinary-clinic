@@ -46,4 +46,31 @@ class ClientController extends Controller
         $client->save();
         return redirect('/pets/create/');
     }
+    
+    public function delete($id)
+    {
+        $client = Client::findOrFail($id);
+        $client->delete();
+        return redirect('/clients');
+    }
+    
+    public function edit($id)
+    {
+        $client = Client::findOrFail($id);
+        return view('admin.clients.edit', compact('client'));
+    }
+    
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'first_name' => 'required'
+        ]);
+        
+        $client = Client::findOrFail($id);
+        $client->first_name = $request->input('first_name');
+        $client->surname = $request->input('surname');
+        $client->save();
+        session()->flash('success_message', 'Success!');
+        return redirect()->action('ClientController@show', ['id' => $client->id]);    
+    }
 }
