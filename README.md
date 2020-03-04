@@ -1,4 +1,5 @@
-# veterinary-clinic
+# Coding Bootcamp Praha Hackathon #3: Creating the back-end for a veterinary clinic
+
 Built the back-end for a veterinary clinic, to be used for administration. Simulation of a basic web dev contract on a six-hour long hackathon.
 
 Seeded the database from a JSON file containing information about clients and pets, then added search, create, edit, and delete functions for both pets and owners. Used Blade as a template engine.
