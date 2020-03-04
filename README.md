@@ -7,12 +7,19 @@ Seeded the database from a JSON file containing information about clients and pe
 ø Tools used in this project:
 
 — PHP;
+
 — Laravel;
+
 — MySQL;
+
 — HTML5;
+
 — SASS/SCSS/Bootstrap for styling;
+
 — Git for version control;
+
 — Yarn as a package manager.
+
 
 ø Instructions:
 
